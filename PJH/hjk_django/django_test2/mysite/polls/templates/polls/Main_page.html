@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--스타일-->
+    <link rel="stylesheet" type="text/css" href="../../static/polls/styles.css"/>
+    <title>비대면 상담 체계</title>
+  </head>
+  <body>
+    <!--헤더-->
+    <header id="header">
+      <div class="header__wrapper">
+        <h1 id="header__logo">비대면 상담 체계</h1>
+        <span id="header__logo-eng">Untact Counseling System</span>
+      </div>
+    </header>
+    <!--헤더 끝-->
+    <main id="index">
+      <div class="index__prime">
+        <!--회원가입-->
+        <div class="sign">
+          <form action="Signup" id="sign__signup" method="POST">
+            <div class = "sign__row">
+              <label for="signup__name">이름</label>
+              <input type="text" name="signUpName"  id="signup__name"/>
+            </div>
+            <div class = "sign__row">
+              <label for="signup__id">아이디</label>
+              <input type="text" name="signUpId" id="signup__id"  placeholder="이메일로 작성해주세요."/>
+            </div>
+            <div class = "sign__row">
+              <label for="signup__pw">비밀번호</label>
+              <input type="password" name="signUpPw"  id="signup__pw" placeholder="15자 이내로 작성해주세요. " maxlength="15"/>
+            </div>
+            <div class = "sign__row">
+              <label for="signup__pw-check">비밀번호 재확인</label>
+              <input type="password" name="signUpPw_check"  id="signup__pw-check" placeholder="같은 비밀번호를   작성해주세요." maxlength="15"/>
+            </div>
+            <div class = "sign__row">
+              <label for="signup__birth-year">생년월일</label>
+              <div class="signup__birth">
+                <input type="text" name="signUpBirthYear"   id="signup__birth-year" placeholder="네자리 수로  작성해주세요." maxlength="4"/>
+                년
+                <select name="signUpBirthMonth"   id="signup__birth-mon">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                월
+                <select name="signUpBirthDay"   id="signup__birth-day">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+                일
+              </div>
+            </div>
+            <div class = "sign__row">
+              <!--군 소속: select 태그 - 경태가 작성 중-->
+              <label for="signup__affi">소속</label>
+              <select name="signUpAffi" id="signup__affi">
+                <option value="001">test</option>
+              </select>
+            </div>
+            <input type="submit" id="signup__submit"  value="회원가입">
+          </form>
+
+
+          <!--회원가입 끝-->
+          <!--로그인-->
+          <form action = "Chat_page" id="sign__signin"   method="POST">
+            <div class = "sign__row">
+              <label for="signin__id">아이디</label>
+              <input type="text" id="signin__id"/>
+            </div>
+            <div class = "sign__row">
+              <label for="signin__pw">비밀번호</label>
+              <input type="password" id="signin__pw" maxlength="15"/>
+            </div>
+            <input type="submit" id="signin__submit" value="로그인">
+          </form>
+          <!--로그인 끝-->
+        </div>
+      </div>
+    </main>
+<!--만날 수 없어도, 당신의 고민은 소중하니까.-->
+<!--더 빠르게, 더 편리하게. -->
+<!--안심하고 아픔을 털어낼 수 있는 곳.-->
+    <script src="../../static/polls/jQuery_3.5.1.js"></script>
+    <script src="../../static/polls/index_signup.js"></script>
+
+  {% if result %}
+                <script type="text/javascript">alert( "{{ signUpId }} 로 메일을 보냈습니다." );</script>
+            
+  {% else %} <script type="text/javascript"> alert("{{ signUpId }}가 유효한 메일인지 확인해 주세요.")</script>
+                
+            {% endif %}
+
+            {% if No_Id %}
+            <script type="text/javascript">alert( "{{ No_Id }}" );</script>
+        {% endif %}       
+  </body>
+</html>

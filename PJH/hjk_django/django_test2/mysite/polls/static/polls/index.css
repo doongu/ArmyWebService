@@ -1,0 +1,94 @@
+#header {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #36D1DC, #5B86E5);
+}
+
+.header__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#header__logo {
+    margin-bottom: 10px;
+    font-family: 'Gugi', cursive;
+    font-size: 44px;
+    color: #fff;
+}
+
+#header__logo-eng {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.index__prime {
+    height: 1000px;
+    background: linear-gradient(180deg, #5B86E5, 85%, #fff);
+}
+
+.sign {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+#sign__signup, #sign__signin {
+    width: 400px;
+    height: 500px;
+    position: relative;
+}
+
+.sign__row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+label {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+input, select {
+    height: 30px;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.input__error {
+    background-color: #ffdada;
+    border: 1px solid #ff0000;
+}
+
+.signup__birth {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#signup__submit, #signin__submit {
+    height: 40px;
+    padding: 0 40px;
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translate(-50%, 0);
+    border: 0;
+    color: #fff;
+    background-color: #5B86E5;
+}
